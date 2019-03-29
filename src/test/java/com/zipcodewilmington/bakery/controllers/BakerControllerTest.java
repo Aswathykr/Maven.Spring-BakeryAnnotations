@@ -41,6 +41,7 @@ public class BakerControllerTest {
                 .willReturn(Optional.of(new Baker("New Baker!", null, null)));
 
         String expectedContent = "{\"id\":null,\"name\":\"New Baker!\",\"employeeId\":null,\"specialty\":null}";
+
         this.mvc.perform(MockMvcRequestBuilders
                 .get("/bakers/" + givenId))
                 .andExpect(MockMvcResultMatchers.status().isOk())
